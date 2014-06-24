@@ -18,8 +18,7 @@ module.exports = function(uploadEngine) {
     uploadEngine(filepath, cb);
   }
 
-  return through.obj(function(file) {
-    var that = this;
+  return through.obj(function(file, enc, callback) {
     var html = file.contents.toString();
 
     var groups = {
@@ -35,7 +34,7 @@ module.exports = function(uploadEngine) {
 
     function done() {
       file.contents = new Buffer(html);
-      that.push(file);
+      callback(null, file);
     }
 
     // do group

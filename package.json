@@ -1,6 +1,6 @@
 {
   "name": "gulp-htmlgroup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "gulp plugin for handle group in html",
   "main": "index.js",
   "scripts": {
